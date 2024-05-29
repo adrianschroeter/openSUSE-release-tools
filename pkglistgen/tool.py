@@ -762,7 +762,7 @@ class PkgListGen(ToolBase.ToolBase):
             product_dir = None
             self.output_dir = self.productcompose_dir
 
-        if not only_release_packages:
+        if not only_release_packages and not git_url:
             file_utils.unlink_all_except(product_dir)
 
         ignore_list = ['supportstatus.txt', 'summary-staging.txt', 'package-groups.changes',
